@@ -45,7 +45,7 @@ RUN echo '#!/bin/sh' > /app/start.sh && \
     echo 'mkdir -p $DATA_FOLDER' >> /app/start.sh && \
     echo '' >> /app/start.sh && \
     echo '# Run with explicit npm settings' >> /app/start.sh && \
-    echo 'NODE_ENV=production npm_config_cache=/tmp/.npm npx -y @pcnfernando/supergateway --header X-Accel-Buffering:no --stdio "NODE_ENV=production npm_config_cache=/tmp/.npm npx -y $SERVER_TYPE $DATA_FOLDER" --baseUrl $BASE_URL --port $PORT --ssePath $SSE_PATH --messagePath $MESSAGE_PATH' >> /app/start.sh && \
+    echo 'NODE_ENV=production npm_config_cache=/tmp/.npm npx -y @pcnfernando/supergateway --header X-Accel-Buffering:no --stdio "NODE_ENV=production npm_config_cache=/tmp/.npm npx -y $SERVER_TYPE $DATA_FOLDER" --port $PORT --ssePath $SSE_PATH --messagePath $MESSAGE_PATH' >> /app/start.sh && \
     chmod 755 /app/start.sh && \
     chown $USER_ID:$GROUP_ID /app/start.sh
 
